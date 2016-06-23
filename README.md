@@ -1,0 +1,5 @@
+# happitest
+
+Run:
+
+```npm start```
