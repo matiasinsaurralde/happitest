@@ -1,7 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi'),
-      request = require('request')
+      requests = require('request')
 
 const server = new Hapi.Server();
 server.connection({
@@ -22,8 +22,7 @@ server.route({
   method: 'GET',
   path: '/ip',
   handler: function( request, reply ) {
-    request( 'http://whatismyip.akamai.com/', (error, response, body) => {
-      console.log('got', error, response, body)
+    requests( 'http://whatismyip.akamai.com/', (error, response, body) => {
       reply(body)
     })
   }
